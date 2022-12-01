@@ -1,5 +1,6 @@
 mod logic;
-
+mod utils;
+use utils::read_input;
 
 fn main() {
     let day11 = logic::Day011 {};
