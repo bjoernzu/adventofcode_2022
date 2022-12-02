@@ -6,7 +6,7 @@ pub struct Day022;
 impl Day022 {
 
     pub fn run(&self) -> i32 {
-        let filename = "input/day021.txt";
+        let filename = "input/day022.txt";
         let input = read_input(filename);
 
         // X means you need to lose, 
@@ -29,7 +29,6 @@ impl Day022 {
         for (_index, line) in input.lines().enumerate() {
             let round_score = option_mapping.get(line).unwrap();
             total_score = total_score + round_score
-            //println!("Opponent: {} {}, My: {} {}, Round Score {}, total score {}", opponent_symbol, opponent, my_symbol, my, round_score, total_score)
         }
 
         // Return the value for top 3 elves
