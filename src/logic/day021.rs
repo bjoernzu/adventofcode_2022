@@ -33,13 +33,10 @@ impl Day021 {
             // Game score
             if *my == *opponent + 1 || (*my == 1 && *opponent == 3) {
                 total_score = total_score + 6;
-                round_score += 6;
             }
             else if my == opponent {
                 total_score = total_score + 3;
-                round_score += 3;
             }
-            println!("Opponent: {} {}, My: {} {}, Round Score {}, total score {}", opponent_symbol, opponent, my_symbol, my, round_score, total_score)
         }
 
         // Return the value for top 3 elves
