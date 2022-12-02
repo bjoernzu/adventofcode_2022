@@ -7,4 +7,6 @@ fn main() {
     day11.run();
     let day12 = logic::Day012 {};
     day12.run();
+    let day21 = logic::Day021 {};
+    day21.run();
 }
