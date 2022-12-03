@@ -1,5 +1,3 @@
-use std::collections::HashSet;
-
 use crate::read_input;
 
 pub struct Day031;
