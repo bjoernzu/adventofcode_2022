@@ -1,5 +1,3 @@
-use std::collections::HashMap;
-
 use crate::read_input;
 
 pub struct Day032;
@@ -37,7 +35,6 @@ impl Day032 {
                         break;
                     }
                 }
-
             }
         }
 
