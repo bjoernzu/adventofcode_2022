@@ -15,5 +15,5 @@ pub use day032::Day032;
 
 pub mod day041;
 pub use day041::Day041;
-// pub mod day042;
-// pub use day042::Day042;
+pub mod day042;
+pub use day042::Day042;
