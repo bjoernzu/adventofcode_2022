@@ -22,3 +22,8 @@ pub mod day051;
 pub use day051::Day051;
 pub mod day052;
 pub use day052::Day052;
+
+pub mod day061;
+pub use day061::Day061;
+pub mod day062;
+pub use day062::Day062;
