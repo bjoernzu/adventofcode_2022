@@ -27,13 +27,17 @@ fn main() {
     day61.run();
     let day62 = logic::Day062 {};
     day62.run();
-    let day71 = logic::Day071 {};
-    day71.run();
-    let day72 = logic::Day072 {};
-    day72.run();
+    // let day71 = logic::Day071 {};
+    // day71.run();
+    // let day72 = logic::Day072 {};
+    // day72.run();
     let day81 = logic::Day081 {};
     day81.run();
     let day82 = logic::Day082 {};
     day82.run();
+    let day91 = logic::Day091 {};
+    day91.run();
+    // let day92 = logic::Day082 {};
+    // day92.run();
 }
 
