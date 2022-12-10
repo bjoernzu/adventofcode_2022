@@ -75,9 +75,9 @@ impl Day092 {
                 // Store new tail position                
                 visited_places.insert(knots[9]);
 
-                step +=1;
-                let (tx, ty) = knots[9];
-                println!("Step {}: Found position: {}, {} (Line {}, Head: {}, {})", step, tx, ty, line, hx, hy);
+                // step +=1;
+                // let (tx, ty) = knots[9];
+                //println!("Step {}: Found position: {}, {} (Line {}, Head: {}, {})", step, tx, ty, line, hx, hy);
             }
         }
 
