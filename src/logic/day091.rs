@@ -18,7 +18,7 @@ impl Day091 {
         let mut visited_places = HashSet::new();
         visited_places.insert((0,0));
 
-        let mut step = 1;
+        // let mut step = 1;
 
         for line in input.lines() {
             let comp: Vec<&str> = line.split(" ").collect();
@@ -65,7 +65,7 @@ impl Day091 {
                 // Store new tail position                
                 visited_places.insert((tx, ty));
                 
-                step +=1;
+                // step +=1;
                 //println!("Step {}: Found position: {}, {} (Line {}, Head: {}, {})", step, tx, ty, line, hx, hy);
             }
         }

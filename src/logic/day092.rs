@@ -17,7 +17,7 @@ impl Day092 {
         let mut visited_places = HashSet::new();
         visited_places.insert((0,0));
 
-        let mut step = 1;
+        // let mut step = 1;
 
         for line in input.lines() {
             let comp: Vec<&str> = line.split(" ").collect();
