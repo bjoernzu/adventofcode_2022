@@ -50,5 +50,5 @@ pub use day102::Day102;
 
 pub mod day111;
 pub use day111::Day111;
-// pub mod day112;
-// pub use day112::Day112;
+pub mod day112;
+pub use day112::Day112;
