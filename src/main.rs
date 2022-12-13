@@ -41,19 +41,19 @@ fn main() {
     day92.run();
     let day101 = logic::Day101 {};
     day101.run();
-    // let day102 = logic::Day102 {};
-    // day102.run();
-    // let day111 = logic::Day111 {};
-    // day111.run();
-    // let day112 = logic::Day112 {};
-    // day112.run();
-    // let day121 = logic::Day121 {};
-    // day121.run();
-    // let day122 = logic::Day122 {};
-    // day122.run();
+    let day102 = logic::Day102 {};
+    day102.run();
+    let day111 = logic::Day111 {};
+    day111.run();
+    let day112 = logic::Day112 {};
+    day112.run();
+    let day121 = logic::Day121 {};
+    day121.run();
+    let day122 = logic::Day122 {};
+    day122.run();
     let day131 = logic::Day131 {};
     day131.run();
-    // let day132 = logic::Day132 {};
-    // day132.run();
+    let day132 = logic::Day132 {};
+    day132.run();
 }
 
