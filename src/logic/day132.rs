@@ -71,7 +71,7 @@ impl Day132 {
         packets.sort();
         let pos_1 = packets.iter().position(|p| p == &parse_line("[[2]]")).unwrap() + 1;
         let pos_2 = packets.iter().position(|p| p == &parse_line("[[6]]")).unwrap() + 1;
-
+        // println!("[[2]] Position: {}, [[6]] Position: {}", pos_1, pos_2);
         // Print the result
         println!("Day 13 - Part 2: Result is {}", pos_1 * pos_2);
     }
@@ -109,11 +109,11 @@ fn parse_elements(elements: &mut Vec<&str>) -> Vec<Packet> {
     return packetlist;
 }
 
-fn get_string(packet: &Packet) -> String {
+fn _get_string(packet: &Packet) -> String {
     match packet {
         Packet::Value(p) => return p.to_string(),
         Packet::Packetlist(pl) => {
-            let strings: Vec<String> = pl.iter().map(|p| get_string(p)).collect();
+            let strings: Vec<String> = pl.iter().map(|p| _get_string(p)).collect();
             return format!("[{}]", strings.join(",") );
         }
     };
