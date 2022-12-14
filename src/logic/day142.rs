@@ -2,10 +2,10 @@ use std::cmp::{min, max};
 
 use crate::read_input;
 
-pub struct Day141;
-impl Day141 {
+pub struct Day142;
+impl Day142 {
     pub fn run(&self) {
-        let filename = "input/day141.txt";
+        let filename = "input/day142.txt";
         let input = read_input(filename);
 
         let mut cave = Vec::new();
@@ -42,12 +42,13 @@ impl Day141 {
             }
         }
 
-        let x_corr = minx-1;
+        let x_add_with = 1000;
+        let x_corr = if minx >= x_add_with/2 {minx - x_add_with/2} else {x_add_with/2 - minx};
 
         // Build the empty cave
-        for y in 0..=maxy-miny+1 {
+        for y in 0..=maxy-miny+2 {
             cave.push(Vec::new());
-            for _x in 0..=maxx-minx+2 {
+            for _x in 0..=maxx-minx+x_add_with {
                 cave[y].push('.');
             }
         }
@@ -57,10 +58,12 @@ impl Day141 {
         // Add the start point
         cave[sand_start.1][sand_start.0-x_corr] = 's';
 
+        // Add the floor 
+        rock_structures.push(((x_corr, maxy+2), (maxx+x_add_with/2, maxy+2)));
         // Add the rock structures
         for rs in rock_structures {
+            // println!("Adding rock structure {},{} to {},{}", rs.0.0, rs.0.1, rs.1.0, rs.1.1);
             for x in min(rs.0.0, rs.1.0)-x_corr..=max(rs.0.0, rs.1.0)-x_corr {
-                // println!("Adding rock structure {},{} to {},{}", rs.0.0, rs.0.1, rs.1.0, rs.1.1);
 
                 for y in min(rs.0.1, rs.1.1)..=max(rs.0.1, rs.1.1) {
                     cave[y][x] = '#';
@@ -74,12 +77,8 @@ impl Day141 {
         let mut sand_units = 0;
         loop {
             let mut pos = (sand_start.0 - x_corr, sand_start.1);
-            let mut abyss = false;
+            let mut full = false;
             loop {
-                if pos.1 >= maxy {
-                    abyss = true;
-                    break;
-                }
                 if cave[pos.1+1][pos.0] == '.' {
                     pos.1 = pos.1 + 1;
                 }
@@ -92,25 +91,33 @@ impl Day141 {
                     pos.0 = pos.0 + 1;
                 }
                 else {
+                    if pos == (sand_start.0 - x_corr, sand_start.1) {
+                        full = true;
+                        break;
+                    }
                     cave[pos.1][pos.0] = 'o';
                     break;
                 }
             }
-            // _draw_cave(&cave);
-            if abyss {
-                break;
+            if sand_units % 250 == 0 {
+                // _draw_cave(&cave);
             }
             sand_units += 1;
+            if full {
+                break;
+            }
         }
 
         // Print the result
-        println!("Day 14 - Part 1: Result is {}", sand_units);
+        println!("Day 14 - Part 2: Result is {}", sand_units);
     }
 }
 
 fn _draw_cave(cave: &Vec<Vec<char>>) {
+    let mut y = 0;
     for yvec in cave {
-        println!("{}", yvec.iter().cloned().collect::<String>());
+        println!("{number:>3} {line}", number=y, line=yvec.iter().cloned().collect::<String>());
+        y+=1;
     }
 }
 
