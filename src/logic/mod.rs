@@ -72,3 +72,8 @@ pub mod day151;
 pub use day151::Day151;
 pub mod day152;
 pub use day152::Day152;
+
+pub mod day161;
+pub use day161::Day161;
+pub mod day162;
+pub use day162::Day162;

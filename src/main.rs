@@ -63,5 +63,9 @@ fn main() {
     day151.run();
     let day152 = logic::Day152 {};
     day152.run();
+    let day161 = logic::Day161 {};
+    day161.run();
+    let day162 = logic::Day162 {};
+    day162.run();
 }
 

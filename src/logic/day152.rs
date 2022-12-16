@@ -1,4 +1,4 @@
-use std::{cmp::{max, min}, collections::HashSet};
+use std::{cmp::{max, min}};
 
 use crate::read_input;
 
