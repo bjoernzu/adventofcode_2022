@@ -82,8 +82,6 @@ impl Day171 {
         let filename = "input/day171.txt";
         let input = read_input(filename);
 
-        println!("Found {} control characters", input.len());
-
         let mut flow = input.chars();
         let num_stones = 2022;
 
@@ -124,13 +122,13 @@ impl Day171 {
                         flow.next().unwrap()
                     }
                 };
-                // draw_chamber_with_stone(&chamber, &stone);
+                // _draw_chamber_with_stone(&chamber, &stone);
                 match jet_direction {
                     '<' => stone.move_sideways(-1, &chamber), //Move left,
                     '>' => stone.move_sideways(1, &chamber), // Move right,
                     _ => false,
                 };
-                // draw_chamber_with_stone(&chamber, &stone);
+                // _draw_chamber_with_stone(&chamber, &stone);
 
                 // Stone fallig one down
                 if !stone.fall_down(&chamber) {
@@ -156,17 +154,17 @@ impl Day171 {
         }
 
         let result = highest_point;
-
+        // _draw_chamber(&chamber);
         println!("Day 17 - Part 1: Result is {}", result);
     }
 }
 
-fn draw_chamber(chamber: &Vec<Vec<char>>) {
+fn _draw_chamber(chamber: &Vec<Vec<char>>) {
     let mut rev_chamber = chamber.clone();
     rev_chamber.reverse();
-    for y in rev_chamber {
+    for y in 0..20 {
         print!("|");
-        for x in y {
+        for x in &rev_chamber[y] {
             print!("{}", x)
         }
         print!("|\n");
@@ -175,7 +173,7 @@ fn draw_chamber(chamber: &Vec<Vec<char>>) {
 }
 
 
-fn draw_chamber_with_stone(chamber: &Vec<Vec<char>>, stone: &Stone) {
+fn _draw_chamber_with_stone(chamber: &Vec<Vec<char>>, stone: &Stone) {
     print!("{esc}[2J{esc}[1;1H", esc = 27 as char);
     let mut rev_chamber = chamber.clone();
     for y in 0..stone.shape.len() {
