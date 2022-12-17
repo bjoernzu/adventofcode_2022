@@ -1,11 +1,11 @@
 use crate::read_input;
-
+use crate::logic::Puzzle;
 
 pub struct Day102;
-impl Day102 {
+impl Puzzle for Day102 {
 
     
-    pub fn run(&self) {
+    fn run(&self) {
         let filename = "input/day102.txt";
         let input = read_input(filename);
 

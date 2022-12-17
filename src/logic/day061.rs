@@ -1,10 +1,10 @@
 use crate::read_input;
-use std::collections::HashSet;
+use crate::logic::Puzzle;use std::collections::HashSet;
 
 pub struct Day061;
-impl Day061 {
+impl Puzzle for Day061 {
 
-    pub fn run(&self) -> usize {
+    fn run(&self)  {
         let filename = "input/day061.txt";
         let input = read_input(filename);
         
@@ -20,7 +20,7 @@ impl Day061 {
         // Print the result
         println!("Day 06 - Part 1: Result is {}", result);
 
-        return result
+        
     }
 }
 

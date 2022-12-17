@@ -1,6 +1,7 @@
 use std::{cmp::max, collections::HashMap};
 
 use crate::read_input;
+use crate::logic::Puzzle;
 
 type Shape = Vec<Vec<bool>>;
 type Chamber = Vec<Vec<bool>>;
@@ -73,8 +74,8 @@ impl Stone {
 }
 
 pub struct Day172;
-impl Day172 {
-    pub fn run(&self) {
+impl Puzzle for Day172 {
+    fn run(&self) {
         let filename = "input/day172.txt";
         let input = read_input(filename);
 
@@ -119,8 +120,6 @@ impl Day172 {
         let mut current_stone: Stone = Stone::new(stone_shapes[0].clone(), 2, 3);
         let x = 2;
 
-        let mut _solver_loops = 0;
-
         // Start the actual solver loop
         loop {
             // Describe the current iteration state
@@ -130,13 +129,6 @@ impl Day172 {
                 current_stone.x,
                 current_stone.y,
             );
-            if _solver_loops % 100000 == 0 {
-                println!(
-                    "Solver loop: {}, Current height: {}, current stones: {}",
-                    _solver_loops, highest_point, stone_i
-                );
-            }
-            _solver_loops += 1;
 
             // Check if the current iteration state is already known
             if cache.contains_key(&iteration_state) {

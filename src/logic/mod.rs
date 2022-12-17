@@ -1,3 +1,11 @@
+pub trait Puzzle {
+    fn run(&self);
+
+    fn name(&self) -> &'static str {
+        stringify!(self)
+    }
+}
+
 pub mod day011;
 pub use day011::Day011;
 pub mod day012;

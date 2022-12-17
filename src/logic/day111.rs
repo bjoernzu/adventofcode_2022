@@ -1,5 +1,5 @@
 use crate::read_input;
-
+use crate::logic::Puzzle;
 use std::cell::{RefCell};
 use std::rc::Rc;
 
@@ -93,8 +93,8 @@ impl Monkey {
 }
 
 pub struct Day111;
-impl Day111 {
-    pub fn run(&self) {
+impl Puzzle for Day111 {
+    fn run(&self) {
         let filename = "input/day111.txt";
         let input = read_input(filename);
 

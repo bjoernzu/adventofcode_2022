@@ -1,9 +1,9 @@
 use crate::read_input;
-
+use crate::logic::Puzzle;
 pub struct Day051;
-impl Day051 {
+impl Puzzle for Day051 {
 
-    pub fn run(&self) -> &str {
+    fn run(&self) {
         let filename = "input/day051.txt";
         let input = read_input(filename);
     
@@ -67,6 +67,6 @@ impl Day051 {
         }
 
         print!("\n");
-        return result
+        
     }
 }

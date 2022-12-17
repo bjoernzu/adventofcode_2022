@@ -1,11 +1,11 @@
 use crate::read_input;
-use std::cmp::max;
+use crate::logic::Puzzle;use std::cmp::max;
 
 pub struct Day082;
-impl Day082 {
+impl Puzzle for Day082 {
 
     
-    pub fn run(&self) -> i32 {
+    fn run(&self)  {
         let filename = "input/day082.txt";
         let input = read_input(filename);
         
@@ -28,8 +28,6 @@ impl Day082 {
         
         // Print the result
         println!("Day 08 - Part 2: Result is {}", max_scenic_score);
-
-        return max_scenic_score
     }
 }
 

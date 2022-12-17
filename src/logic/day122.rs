@@ -1,13 +1,13 @@
 use crate::read_input;
-use std::cmp::{max, min};
+use crate::logic::Puzzle;use std::cmp::{max, min};
 use std::cmp::{Ord, Ordering};
 use std::collections::HashMap;
 use std::hash::{Hash, Hasher};
 use std::rc::Rc;
 
 pub struct Day122;
-impl Day122 {
-    pub fn run(&self) {
+impl Puzzle for Day122 {
+    fn run(&self) {
         let filename = "input/day122.txt";
         let input = read_input(filename);
 

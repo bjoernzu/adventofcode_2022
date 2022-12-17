@@ -1,14 +1,14 @@
 use crate::read_input;
-
+use crate::logic::Puzzle;
 pub struct Day032;
-impl Day032 {
+impl Puzzle for Day032 {
 
     // Priority of items
     // - Lowercase item types a through z have priorities 1 through 26.
     // - Uppercase item types A through Z have priorities 27 through 52.
 
 
-    pub fn run(&self) -> i32 {
+    fn run(&self)  {
         let filename = "input/day032.txt";
         let input = read_input(filename);
     
@@ -40,6 +40,5 @@ impl Day032 {
 
         // Print the result
         println!("Day 03 - Part 2: Result is {} ", result);
-        return result
     }
 }

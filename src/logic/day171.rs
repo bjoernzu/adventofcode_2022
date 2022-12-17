@@ -1,7 +1,7 @@
 use std::cmp::max;
 
 use crate::read_input;
-
+use crate::logic::Puzzle;
 struct Stone {
     shape: Vec<Vec<char>>,
     x: usize,
@@ -77,8 +77,8 @@ impl Stone {
 }
 
 pub struct Day171;
-impl Day171 {
-    pub fn run(&self) {
+impl Puzzle for Day171 {
+    fn run(&self) {
         let filename = "input/day171.txt";
         let input = read_input(filename);
 

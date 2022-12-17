@@ -1,5 +1,5 @@
 use crate::read_input;
-use std::cmp::min;
+use crate::logic::Puzzle;use std::cmp::min;
 use std::cmp::Ordering;
 
 #[derive(PartialEq, Eq)]
@@ -53,8 +53,8 @@ impl PartialOrd for Packet {
 
 
 pub struct Day131;
-impl Day131 {
-    pub fn run(&self) {
+impl Puzzle for Day131 {
+    fn run(&self) {
         let filename = "input/day131.txt";
         let input = read_input(filename);
         let mut lines = input.lines();

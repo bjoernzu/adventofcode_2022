@@ -1,7 +1,7 @@
 use std::{cmp::{max, min}};
 
 use crate::read_input;
-
+use crate::logic::Puzzle;
 struct Sensor {
     x: i64,
     y: i64,
@@ -28,8 +28,8 @@ impl Sensor {
 }
 
 pub struct Day152;
-impl Day152 {
-    pub fn run(&self) {
+impl Puzzle for Day152 {
+    fn run(&self) {
         let filename = "input/day152.txt";
         let input = read_input(filename);
 

@@ -1,10 +1,10 @@
 use std::cmp::{min, max};
 
 use crate::read_input;
-
+use crate::logic::Puzzle;
 pub struct Day141;
-impl Day141 {
-    pub fn run(&self) {
+impl Puzzle for Day141 {
+    fn run(&self) {
         let filename = "input/day141.txt";
         let input = read_input(filename);
 

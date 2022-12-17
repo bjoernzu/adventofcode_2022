@@ -4,7 +4,7 @@ use std::{
 };
 
 use crate::read_input;
-
+use crate::logic::Puzzle;
 #[derive(Clone)]
 struct Node {
     name: String,
@@ -64,8 +64,8 @@ impl Node {
 }
 
 pub struct Day162;
-impl Day162 {
-    pub fn run(&self) {
+impl Puzzle for Day162 {
+    fn run(&self) {
         let filename = "input/day162.txt";
         let input = read_input(filename);
 

@@ -1,11 +1,11 @@
 use crate::read_input;
-
+use crate::logic::Puzzle;
 
 pub struct Day101;
-impl Day101 {
+impl Puzzle for Day101 {
 
     
-    pub fn run(&self) -> usize {
+    fn run(&self)  {
         let filename = "input/day101.txt";
         let input = read_input(filename);
 
@@ -32,8 +32,6 @@ impl Day101 {
 
         // Print the result
         println!("Day 10 - Part 1: Result is {}", signal_strength);
-
-        return signal_strength as usize;
     }
 }
 

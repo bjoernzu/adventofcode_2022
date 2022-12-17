@@ -1,11 +1,11 @@
 use std::collections::HashMap;
 
 use crate::read_input;
-
+use crate::logic::Puzzle;
 pub struct Day022;
-impl Day022 {
+impl Puzzle for Day022 {
 
-    pub fn run(&self) -> i32 {
+    fn run(&self)  {
         let filename = "input/day022.txt";
         let input = read_input(filename);
 
@@ -33,6 +33,5 @@ impl Day022 {
 
         // Return the value for top 3 elves
         println!("Day 02 - Part 2: Total score is {} ", total_score);
-        return total_score
     }
 }

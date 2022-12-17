@@ -1,10 +1,10 @@
 
 use crate::read_input;
-
+use crate::logic::Puzzle;
 pub struct Day011;
-impl Day011 {
+impl Puzzle for Day011 {
 
-    pub fn run(&self) -> i32 {
+    fn run(&self)  {
         
     let filename = "input/day011.txt";
     let input = read_input(filename);
@@ -32,6 +32,5 @@ impl Day011 {
     }
     // Return the max
     println!("Day 01 - Part 1: Elf {} carries max calories {}", max_elf, max_calories);
-    return max_calories
     }
 }

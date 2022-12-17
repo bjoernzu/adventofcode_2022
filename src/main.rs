@@ -1,75 +1,75 @@
+use std::env;
+
 mod logic;
 mod utils;
+use std::collections::HashMap;
 use utils::read_input;
 
 fn main() {
-    let day11 = logic::Day011 {};
-    day11.run();
-    let day12 = logic::Day012 {};
-    day12.run();
-    let day21 = logic::Day021 {};
-    day21.run();
-    let day22 = logic::Day022 {};
-    day22.run();
-    let day31 = logic::Day031 {};
-    day31.run();
-    let day32 = logic::Day032 {};
-    day32.run();
-    let day41 = logic::Day041 {};
-    day41.run();
-    let day42 = logic::Day042 {};
-    day42.run();
-    let day51 = logic::Day051 {};
-    day51.run();
-    let day52 = logic::Day052 {};
-    day52.run();
-    let day61 = logic::Day061 {};
-    day61.run();
-    let day62 = logic::Day062 {};
-    day62.run();
-    // let day71 = logic::Day071 {};
-    // day71.run();
-    // let day72 = logic::Day072 {};
-    // day72.run();
-    let day81 = logic::Day081 {};
-    day81.run();
-    let day82 = logic::Day082 {};
-    day82.run();
-    let day91 = logic::Day091 {};
-    day91.run();
-    let day92 = logic::Day092 {};
-    day92.run();
-    let day101 = logic::Day101 {};
-    day101.run();
-    let day102 = logic::Day102 {};
-    day102.run();
-    let day111 = logic::Day111 {};
-    day111.run();
-    let day112 = logic::Day112 {};
-    day112.run();
-    let day121 = logic::Day121 {};
-    day121.run();
-    let day122 = logic::Day122 {};
-    day122.run();
-    let day131 = logic::Day131 {};
-    day131.run();
-    let day132 = logic::Day132 {};
-    day132.run();
-    let day141 = logic::Day141 {};
-    day141.run();
-    let day142 = logic::Day142 {};
-    day142.run();
-    let day151 = logic::Day151 {};
-    day151.run();
-    let day152 = logic::Day152 {};
-    day152.run();
-    let day161 = logic::Day161 {};
-    day161.run();
-    let day162 = logic::Day162 {};
-    day162.run();
-    let day171 = logic::Day171 {};
-    day171.run();
-    let day172 = logic::Day172 {};
-    day172.run();
+    let mut puzzles: HashMap<(u8, u8), Box<dyn logic::Puzzle>> = HashMap::new();
+
+    puzzles.insert((1, 1), Box::new(logic::Day011));
+    puzzles.insert((1, 2), Box::new(logic::Day012));
+    puzzles.insert((2, 1), Box::new(logic::Day021));
+    puzzles.insert((2, 2), Box::new(logic::Day022));
+    puzzles.insert((3, 1), Box::new(logic::Day031));
+    puzzles.insert((3, 2), Box::new(logic::Day032));
+    puzzles.insert((4, 1), Box::new(logic::Day041));
+    puzzles.insert((4, 2), Box::new(logic::Day042));
+    puzzles.insert((5, 1), Box::new(logic::Day051));
+    puzzles.insert((5, 2), Box::new(logic::Day052));
+    puzzles.insert((6, 1), Box::new(logic::Day061));
+    puzzles.insert((6, 2), Box::new(logic::Day062));
+    // puzzles.insert((7,1), Box::new(logic::Day071));
+    // puzzles.insert((7,2), Box::new(logic::Day072));
+    puzzles.insert((8, 1), Box::new(logic::Day081));
+    puzzles.insert((8, 2), Box::new(logic::Day082));
+    puzzles.insert((9, 1), Box::new(logic::Day091));
+    puzzles.insert((9, 2), Box::new(logic::Day092));
+    puzzles.insert((10, 1), Box::new(logic::Day101));
+    puzzles.insert((10, 2), Box::new(logic::Day102));
+    puzzles.insert((11, 1), Box::new(logic::Day111));
+    puzzles.insert((11, 2), Box::new(logic::Day112));
+    puzzles.insert((12, 1), Box::new(logic::Day121));
+    puzzles.insert((12, 2), Box::new(logic::Day122));
+    puzzles.insert((13, 1), Box::new(logic::Day131));
+    puzzles.insert((13, 2), Box::new(logic::Day132));
+    puzzles.insert((14, 1), Box::new(logic::Day141));
+    puzzles.insert((14, 2), Box::new(logic::Day142));
+    puzzles.insert((15, 1), Box::new(logic::Day151));
+    puzzles.insert((15, 2), Box::new(logic::Day152));
+    puzzles.insert((16, 1), Box::new(logic::Day161));
+    puzzles.insert((16, 2), Box::new(logic::Day162));
+    puzzles.insert((17, 1), Box::new(logic::Day171));
+    puzzles.insert((17, 2), Box::new(logic::Day172));
+
+    // Check what to execute
+    // Default: Only execute last puzzle
+    // "all": Execute all puzzles
+    // "16": Execute all puzzles for day 16
+    // "16 1": Execute only part 1 for day 16
+    let args: Vec<String> = env::args().collect();
+    match args.len() {
+        1 => puzzles.iter().last().unwrap().1.run(),
+        2 => match args[1].as_str() {
+            "all" => for p in puzzles.iter() {p.1.run()},
+            _ => {
+                let day = args[1].parse::<u8>().unwrap();
+                solve_puzzle(puzzles.get(&(day, 1 as u8)));
+                solve_puzzle(puzzles.get(&(day, 2 as u8)))
+            },
+        },
+        3 => solve_puzzle(puzzles.get(&(
+            args[1].parse::<u8>().unwrap(),
+            args[2].parse::<u8>().unwrap(),
+        ))),
+        _ => {}
+    }
 }
 
+fn solve_puzzle(p: Option<&Box<dyn logic::Puzzle>>) {
+    match p {
+        Some(puzzle) => puzzle.run(),
+        _ => println!(), 
+    }
+}
