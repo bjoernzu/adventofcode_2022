@@ -93,5 +93,5 @@ pub use day172::Day172;
 
 pub mod day181;
 pub use day181::Day181;
-// pub mod day182;
-// pub use day182::Day182;
+pub mod day182;
+pub use day182::Day182;
