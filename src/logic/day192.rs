@@ -10,7 +10,7 @@ type Materials = [u8; 4];
 type State = (u8, Materials, Materials);
 type Result = HashMap<State, u32>;
 
-const NAMES: [&str; 4] = ["Ore", "Clay", "Obsidian", "Geode"];
+const _NAMES: [&str; 4] = ["Ore", "Clay", "Obsidian", "Geode"];
 
 struct Blueprint {
     id: u8,
@@ -164,7 +164,7 @@ fn substract_materials(m1: &Materials, m2: &Materials) -> Materials {
     return result;
 }
 
-fn print_state(state: &State) {
+fn _print_state(state: &State) {
     println!(
         "Minute {}, robots: {}, {}, {}, {}; materials {}, {}, {}, {}",
         state.0,

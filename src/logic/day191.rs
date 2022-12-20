@@ -10,7 +10,7 @@ type Materials = [u8; 4];
 type State = (u8, Materials, Materials);
 type Result = HashMap<State, u32>;
 
-const NAMES: [&str; 4] = ["Ore", "Clay", "Obsidian", "Geode"];
+const _NAMES: [&str; 4] = ["Ore", "Clay", "Obsidian", "Geode"];
 
 struct Blueprint {
     id: u8,
@@ -54,7 +54,7 @@ impl Blueprint {
                     && materials[2] >= self.costs[r][2]
                     && materials[3] >= self.costs[r][3]
                 {
-                    println!("Building one {} robot", NAMES[r]);
+                    println!("Building one {} robot", _NAMES[r]);
                     new_robots[r] += 1;
                     materials = substract_materials(&materials, &self.costs[r]);
                 }
@@ -65,7 +65,7 @@ impl Blueprint {
                 if robots[i] > 0 {
                     println!(
                         "{} {}-collecting robot collects {} {}; you now have {} {}",
-                        robots[i], NAMES[i], robots[i], NAMES[i], materials[i], NAMES[i]
+                        robots[i], _NAMES[i], robots[i], _NAMES[i], materials[i], _NAMES[i]
                     );
                 }
             }
@@ -75,7 +75,7 @@ impl Blueprint {
                 if new_robots[i] > 0 {
                     println!(
                         "The new {}-collecting robot is ready; you now have {} of them.",
-                        NAMES[i], robots[i]
+                        _NAMES[i], robots[i]
                     );
                 }
             }
@@ -103,7 +103,7 @@ impl Blueprint {
                     && materials[2] >= self.costs[r][2]
                     && materials[3] >= self.costs[r][3]
                 {
-                    println!("Building one {} robot", NAMES[r]);
+                    println!("Building one {} robot", _NAMES[r]);
                     robot_queue = [0; 4];
                     new_robots[r] += 1;
                     materials = substract_materials(&materials, &self.costs[r]);
@@ -123,7 +123,7 @@ impl Blueprint {
                 if robots[i] > 0 {
                     println!(
                         "{} {}-collecting robot collects {} {}; you now have {} {}",
-                        robots[i], NAMES[i], robots[i], NAMES[i], materials[i], NAMES[i]
+                        robots[i], _NAMES[i], robots[i], _NAMES[i], materials[i], _NAMES[i]
                     );
                 }
             }
@@ -133,7 +133,7 @@ impl Blueprint {
                 if new_robots[i] > 0 {
                     println!(
                         "The new {}-collecting robot is ready; you now have {} of them.",
-                        NAMES[i], robots[i]
+                        _NAMES[i], robots[i]
                     );
                 }
             }
@@ -268,7 +268,7 @@ fn substract_materials(m1: &Materials, m2: &Materials) -> Materials {
     return result;
 }
 
-fn print_state(state: &State) {
+fn _print_state(state: &State) {
     println!(
         "Minute {}, robots: {}, {}, {}, {}; materials {}, {}, {}, {}",
         state.0,
