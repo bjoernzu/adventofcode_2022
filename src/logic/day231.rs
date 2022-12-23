@@ -78,7 +78,9 @@ impl Puzzle for Day231 {
             current_position.0 += 1;
         }
         let num_elves = elves.len() as i32;
-        draw_plan(&elves);
+        if DEBUG {
+            draw_plan(&elves);
+        }
 
         // Hardcode the checks
         let mut direction_checks: HashMap<Move, [Position; 3]> = HashMap::new();

@@ -135,7 +135,7 @@ impl Puzzle for Day222 {
                 .position(|d| d == &current_movement)
                 .unwrap() as i32;
 
-        println!("Day 21 - Part 1: Result is {}", result);
+        println!("Day 22 - Part 2: Result is {}", result);
     }
 }
 
