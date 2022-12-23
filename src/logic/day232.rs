@@ -120,7 +120,7 @@ impl Puzzle for Day232 {
                         .get(&direction)
                         .unwrap()
                         .iter()
-                        .all(|c| !elves.contains_key(&apply_move(e.0, &c)))
+                        .all(|c| !neighbours.get(&c).unwrap())
                     {
                         *new_positions
                             .entry(apply_move(e.0, &direction))
