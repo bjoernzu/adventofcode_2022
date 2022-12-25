@@ -125,3 +125,8 @@ pub mod day241;
 pub use day241::Day241;
 pub mod day242;
 pub use day242::Day242;
+
+pub mod day251;
+pub use day251::Day251;
+// pub mod day252;
+// pub use day252::Day252;

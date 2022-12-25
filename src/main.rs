@@ -56,6 +56,8 @@ fn main() {
     puzzles.insert((23, 2), Box::new(logic::Day232));
     puzzles.insert((24, 1), Box::new(logic::Day241));
     puzzles.insert((24, 2), Box::new(logic::Day242));
+    puzzles.insert((25, 1), Box::new(logic::Day251));
+    // puzzles.insert((25, 2), Box::new(logic::Day252));
 
     // Check what to execute
     // Default: Only execute last puzzle
